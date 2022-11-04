@@ -93,7 +93,7 @@ h6,
 
 .topbar-right {
     position: relative;
-    background: var(--primary);
+    background: #BBA14F;
 }
 
 .topbar-right::before {
@@ -120,7 +120,7 @@ h6,
     height: 75px;
     display: flex;
     align-items: center;
-    background: var(--primary);
+    background: #BBA14F;
 }
 
 .navbar .navbar-brand::after {
