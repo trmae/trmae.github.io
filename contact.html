@@ -30,6 +30,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
           var isNS = (navigator.appName == "PN") ? 1 : 0;
@@ -197,7 +198,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <form id="submit-form">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -240,6 +241,25 @@
     </div>
     <!-- Contact End -->
 
+    <script>
+        $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbwp1Hazk_cwB_-Msk9hytPVihAp8wrOJOpPxSVrLhZhjBsj4xrL0xsLkjiYBBi8OQa_2w/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+        alert("Our sales team will contact you shortly. Thank you!")
+        window.location.reload()
+        //window.location.href="https://google.com"
+        },
+        error:function (err){
+        alert("Something Error")
+        
+        }
+        })
+        })
+        </script>
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
