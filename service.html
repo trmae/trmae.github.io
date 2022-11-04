@@ -29,6 +29,24 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+    <script>
+          var isNS = (navigator.appName == "PN") ? 1 : 0;
+          if(navigator.appName == "PN") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+          function mischandler(){
+          return false;
+          }
+          function mousehandler(e){
+          var myevent = (isNS) ? e : event;
+          var eventbutton = (isNS) ? myevent.which : myevent.button;
+          if((eventbutton==2)||(eventbutton==3)) return false;
+          }
+          document.oncontextmenu = mischandler;
+          document.onmousedown = mousehandler;
+          document.onmouseup = mousehandler;
+          </script>
+
 </head>
 
 <body>
@@ -298,9 +316,9 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="service.html">Our Services</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Support</a>
                 </div>
